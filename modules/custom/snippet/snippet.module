@@ -1,0 +1,283 @@
+<?php
+/**
+  * @file
+  * Snippet module hooks.
+  */
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\ContentEntityType;
+use Drupal\snippet\Entity\Snippet;
+
+/**
+  * Implements hook_form_alter().
+  *
+  * Alter the node add/edit form to include Snippets feature for adding snippets to body field
+  */
+function snippet_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  /* Array of Snippets */
+  $names = [];
+
+  /* 1 Column Box snippet */
+  $names['1 column box'] = '<!-- 1 column box -->
+<div class="snippet snippet-1-col-box" id="snippet-1-col-box">
+  <div>
+    <h3>1 column box</h3>
+    <p>This is the <em>1 column box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet. Aliquam erat volutpat. Etiam rhoncus nec odio quis sagittis. Curabitur convallis id urna id sodales.</p>
+  </div>
+</div>'; // end 1 Column Box snippet
+
+  /* 2 Column Box snippet */
+  $names['2 column box'] = '<!-- 2 column box -->
+<div class="snippet snippet-2-col-box" id="snippet-2-col-box">
+  <div>
+    <h3>2 column box</h3>
+    <p>This is the <em>2 column box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+  <div>
+    <h3>2 column box</h3>
+    <p>This is the <em>2 column box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+</div>'; // end 2 Column Box snippet
+
+/* 3 Column Box snippet */
+  $names['3 column box'] = '<!-- 3 column box -->
+<div class="snippet snippet-3-col-box" id="snippet-3-col-box">
+  <div>
+    <h3>3 column box</h3>
+    <p>This is the <em>3 column box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+  <div>
+    <h3>3 column box</h3>
+    <p>This is the <em>3 column box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+  <div>
+    <h3>3 column box</h3>
+    <p>This is the <em>3 column box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+</div>'; // end 3 Column Box snippet
+
+/* 4 Square Box snippet */
+  $names['4 square box'] = '<!-- 4 square box -->
+<div class="snippet snippet-4-sq-box" id="snippet-4-sq-box">
+  <div>
+    <h3>4 square box</h3>
+    <p>This is the <em>4 square box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+  <div>
+    <h3>4 square box</h3>
+    <p>This is the <em>4 square box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+  <div>
+    <h3>4 square box</h3>
+    <p>This is the <em>4 square box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+  <div>
+    <h3>4 square box</h3>
+    <p>This is the <em>4 square box</em> snippet!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet.</p>
+  </div>
+</div>'; // end 4 Square Box snippet
+
+/* CTA Button snippet */
+  $names['CTA Button'] = '<!-- Call To Action button -->
+<div class="snippet snippet-cta" id="snippet-cta">
+  <div>
+    <a href="/contact-us">CTA button</a>
+  </div>
+</div>'; // end CTA Button snippet
+
+/* Checkmark List snippet */
+  $names['Checkmark list'] = '<!-- Checkmark list -->
+<div class="snippet snippet-checkmark-list" id="snippet-checkmark-list">
+    <div>
+        <h3>Checkmark list</h3>
+        <p>This is the <em>Checkmark list</em> snippet!</p>
+        <ul id="snippet-checkmark-ul">
+            <li>
+                <img src="/modules/custom/snippet/images/checkmark.png" alt="Black checkmark">
+                <p>List item 1</p>
+            </li>
+            <li>
+                <img src="/modules/custom/snippet/images/checkmark.png" alt="Black checkmark">
+                <p>List item 2</p>
+            </li>
+            <li>
+                <img src="/modules/custom/snippet/images/checkmark.png" alt="Black checkmark">
+                <p>List item 3</p>
+            </li>
+            <li>
+                <img src="/modules/custom/snippet/images/checkmark.png" alt="Black checkmark">
+                <p>List item 4</p>
+            </li>
+            <li>
+                <img src="/modules/custom/snippet/images/checkmark.png" alt="Black checkmark">
+                <p>List item 5</p>
+            </li>
+        </ul>
+    </div>
+</div>'; // end Checkbox List snippet
+
+/* Font Awesome Icon List snippet */
+  $names['Font Awesome Icon list'] = '<!-- Font Awesome Icon list -->
+<div class="snippet snippet-fontawesome-list" id="snippet-fontawesome-list">
+    <div>
+        <h3>Font Awesome Icon list</h3>
+        <p>This is the <em>Font Awesome Icon list</em> snippet!</p>
+        <ul id="snippet-fontawesome-ul">
+            <li>
+                <i class="fas fa-phone"></i>
+                <p>List item 1</p>
+            </li>
+            <li>
+                <i class="fas fa-smile"></i>
+                <p>List item 2</p>
+            </li>
+            <li>
+                <i class="fas fa-certificate"></i>
+                <p>List item 3</p>
+            </li>
+            <li>
+                <i class="fas fa-home"></i>
+                <p>List item 4</p>
+            </li>
+            <li>
+                <i class="fas fa-hammer"></i>
+                <p>List item 5</p>
+            </li>
+        </ul>
+    </div>
+</div>'; // end Font Awesome Icon List snippet
+
+/* Font Awesome Icon List 2 snippet */
+  $names['Font Awesome Icon list 2'] = '<!-- Font Awesome Icon list 2 -->
+<div class="snippet snippet-fontawesome-list-2" id="snippet-fontawesome-list-2">
+    <div>
+        <h3>Font Awesome Icon list 2</h3>
+        <p>This is the <em>Font Awesome Icon list 2</em> snippet!</p>
+        <ul id="snippet-fontawesome-ul-2">
+            <li>
+                <i class="fas fa-phone fa-2x"></i>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volupat. Ut wisi enim ad minim veniam, quis</p>
+            </li>
+            <li>
+                <i class="fas fa-smile fa-2x"></i>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volupat. Ut wisi enim ad minim veniam, quis</p>
+            </li>
+            <li>
+                <i class="fas fa-certificate fa-2x"></i>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volupat. Ut wisi enim ad minim veniam, quis</p>
+            </li>
+        </ul>
+    </div>
+</div>'; // end Font Awesome Icon List 2 snippet
+
+/* Block Quote snippet */
+  $names['Block quote'] = '<!-- Block quote -->
+<div class="snippet snippet-block-quote" id="snippet-block-quote">
+   <div>
+      <i class="fas fa-quote-left"></i>
+      <p>This is the <em><b>Block quote</b></em> snippet! Pellentesque maximus augue et sapien rutrum sollicitudin. Donec eleifend ipsum eu metus ultrices imperdiet. Aliquam erat volutpat. Etiam rhoncus nec odio quis sagittis. Curabitur convallis id urna id sodales.</p>
+      <i class="fas fa-quote-right"></i>
+   </div>
+</div>'; // end Block Quote snippet
+
+  /* Populate an array of all Entity types */
+  $content_entity_types = []; // array of entity types (content types only)
+  $entity_type_definitions = \Drupal::entityTypeManager()->getDefinitions();
+  /* @var $definition EntityTypeInterface */
+  foreach ($entity_type_definitions as $definition) {
+    if ($definition instanceof ContentEntityType) {
+      $content_entity_types[] = $definition->id();
+    }
+  }
+
+  /* Add array of Snippets to database */
+  foreach($content_entity_types as $content_entity_type) { // loop through each Entity type
+    if ($content_entity_type === 'snippet') { // when iterating over the Snippet entity type
+      foreach ($names as $name=>$value) { // loop through the array of snippets defined above
+        $snippet = \Drupal::entityTypeManager() // try to load each snippet by its name
+          ->getStorage('snippet')
+          ->loadByProperties(['name' => $name]);
+        if (!$snippet) { // if that snippet does not exist
+          $new_snippet = \Drupal::entityTypeManager()->getStorage('snippet')->create(['type' => 'snippet']); // create that snippet
+          $new_snippet->set('name', $name); // set name of new snippet
+          $new_snippet->set('field_snippet', $value); // set text value of new snippet
+          $new_snippet->save(); // save the new snippet
+        }
+      }
+    }
+  }
+
+  /* Get all snippets from database */
+  $snippet_types = Snippet::loadMultiple();
+  $options = [];
+  foreach ($snippet_types as $snippet_type) {
+    $options[$snippet_type->id()] = $snippet_type->label();
+  }
+
+  /* Get current node type */
+  $node = $form_state->getFormObject()->getEntity();
+  $current_node_type = $node->getType();
+
+  /* Get data from Snippet Settings Form */
+  $config = \Drupal::config('snippet.settings');
+  $types = $config->get('enabled_types', array());
+
+  /* Add the Snippet feature to form (the current create/edit node form) */
+  if (in_array($current_node_type, $types)){ // if the current node type is enabled in Snippet Settings Form
+    /* Attach Snippet library */
+    $form['#attached']['library'][] = 'snippet/snippet_form';
+    $form['#attached']['drupalSettings']['snippet']['snippets'] = $names;
+
+    /* Form Details */
+    $form['snippet'] = array(
+      '#type' => 'details',
+      '#title' => t('Snippets'),
+      '#access' => \Drupal::currentUser()->hasPermission('administer snippet'),
+      '#group' => 'advanced',
+      '#weight' => 100,
+    );
+
+    /* Input: Select dropdown of snippets */
+    $form['snippet']['snippet_enabled'] = array(
+      '#type' => 'select',
+      '#options' => $options,
+    );
+
+  }
+}
+
+/**
+  * Implements hook_page_attachments().
+  *
+  * Attach Snippet library (css/js) to all content pages
+  */
+function snippet_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'snippet/snippet_page';
+}
+
+/**
+ * Implements hook_help().
+ */
+function snippet_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the snippet module.
+    case 'help.page.snippet':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Assists in inserting snippets of HTML into the body field as well as other editor and text areas') . '</p>';
+      return $output;
+
+    default:
+  }
+}

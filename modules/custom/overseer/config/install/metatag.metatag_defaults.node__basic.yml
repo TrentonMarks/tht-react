@@ -1,0 +1,7 @@
+# metatag.metatag_defaults.node__basic.yml
+langcode: en
+status: true
+dependencies: {  }
+id: node__basic
+label: 'Content: Basic'
+tags: {  }

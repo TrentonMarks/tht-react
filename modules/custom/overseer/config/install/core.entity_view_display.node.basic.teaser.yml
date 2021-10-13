@@ -1,0 +1,36 @@
+# core.entity_view_display.node.basic.teaser.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.basic.body
+    - field.field.node.basic.field_block_reference
+    - field.field.node.basic.field_hero
+    - field.field.node.basic.field_metatags
+    - node.type.basic
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: xs3nIemSm6gzZFVThXpDhrrJ5yyBt-sc5qfBkcg8C7w
+id: node.basic.teaser
+targetEntityType: node
+bundle: basic
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  field_block_reference: true
+  field_hero: true
+  field_metatags: true

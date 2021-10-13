@@ -1,0 +1,7 @@
+overseer:
+  version: VERSION
+  js:
+    js/scripts.js: {}
+  css:
+    theme:
+      css/style.css: {}

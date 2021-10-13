@@ -1,0 +1,48 @@
+# core.entity_view_display.node.webform.teaser.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.webform.body
+    - field.field.node.webform.field_metatags
+    - field.field.node.webform.webform
+    - node.type.webform
+  module:
+    - metatag
+    - text
+    - user
+    - webform
+id: node.webform.teaser
+targetEntityType: node
+bundle: webform
+mode: teaser
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_metatags:
+    type: metatag_empty_formatter
+    weight: 3
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  webform:
+    type: webform_entity_reference_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      source_entity: true
+    third_party_settings: {  }
+hidden: {  }

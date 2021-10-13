@@ -1,0 +1,23 @@
+# node.type.webform.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform_node
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - top-top-nav
+    parent: 'top-top-nav:'
+_core:
+  default_config_hash: BuY_3PjmYtRTSuvyFORJZUe0-TQiNXEE6yYQ_dkjxW8
+name: Webform
+type: webform
+description: 'A basic page with a webform attached.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

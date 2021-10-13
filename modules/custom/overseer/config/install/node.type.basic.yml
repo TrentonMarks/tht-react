@@ -1,0 +1,24 @@
+# node.type.basic.yml
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - overseer
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+      - top-top-nav
+    parent: 'main:'
+_core:
+  default_config_hash: 1fSxpvNvSv7zolyWDur7RE2X-RYwyot_TY18m2rVqEs
+name: Basic
+type: basic
+description: 'Use the Basic content type for basic pages.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

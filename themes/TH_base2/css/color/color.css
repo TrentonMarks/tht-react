@@ -1,0 +1,243 @@
+/****** Primary Light ******/
+a {
+	color: #abc6be;
+}
+
+#top-top-nav #block-toptopnav a {
+	border-color: #abc6be;
+}
+
+#top-top-nav #block-toptopnav ul ul a {
+	color: #abc6be;
+}
+
+#header {
+  background-color: #abc6be;
+}
+
+#header #service-menu li ul > li a {
+	color: #abc6be;
+	border-left-color: #abc6be;
+}
+
+#main-top .container #block-flex-callout .basic__body .flex-column .icon-wrapper {
+	background-color: #abc6be;
+}
+
+#block-rightcolumncta,
+#block-rightcolumncta--3 {
+	border-color: #abc6be;
+}
+
+.page-news .views-row a {
+	color: #abc6be;
+}
+
+.testimonials-item:first-child {
+	border-color: #abc6be;
+}
+
+.testimonials-item:nth-child(2) {
+	border-color: #abc6be;
+}
+
+.testimonial-read-more-btn, .testimonial-read-less-btn {
+	color: #abc6be;
+}
+
+
+/****** Primary Dark ******/
+.cta-button.secondary {
+	border-color: #608995;
+	color: #608995;
+}
+
+#top-top-nav {
+	background-color: #608995;
+}
+
+#top-top-nav #block-toptopnav ul ul a:hover {
+	color: #608995;
+}
+
+#main-top .container #block-flex-callout .basic__body .flex-column {
+	color: #608995;
+}
+
+#block-rightcolumncta,
+#block-rightcolumncta--3 {
+	border-top-color: #608995;
+}
+
+#block-rightcolumncta h3,
+#block-rightcolumncta--3 h3{
+	color: #608995;
+}
+
+@media screen and (max-width: 768px) {
+  #top-top-nav #block-toptopnav ul {
+    background-color: #608995;
+  }
+}
+
+
+/****** Contrast ******/
+a:hover {
+	color: #df7027;
+}
+
+.cta-button.primary {
+	background-color: #df7027;
+	border-color: #df7027;
+}
+
+.webform-button--submit {
+	background-color: #df7027;
+}
+
+.testimonial-read-more-btn:hover, .testimonial-read-less-btn:hover {
+	color: #df7027;
+}
+
+.testimonial-read-more-btn:active, .testimonial-read-less-btn:active {
+	color: #df7027;
+}
+
+.testimonial-read-more-btn:focus, .testimonial-read-less-btn:focus {
+	color: #df7027;
+}
+
+
+/****** Neutral ******/
+body {
+	background-color: #34373c;
+}
+
+.cta-button {
+	background-color: #34373c;
+	border-color: #34373c;
+}
+
+.cta-button.primary:hover {
+	background-color: #34373c;
+	border-color: #34373c;
+}
+
+.cta-button.secondary:hover {
+	color: #34373c;
+	border-color: #34373c;
+}
+
+#header #service-menu li ul li a:hover {
+	color: #34373c;
+}
+
+.layout-container > .hero {
+	background-color: #34373c;
+}
+
+#main-top .container #block-flex-callout .basic__body .flex-column .icon-wrapper {
+	border-color: #34373c;
+}
+
+#main-top .container #block-flex-callout .basic__body .flex-column h4 {
+	color: #34373c;
+}
+
+#main-top .container #block-flex-callout .basic__body .flex-column .cta-button {
+	border-color: #34373c;
+	color: #34373c;
+}
+
+.page-news .views-row a:hover {
+	color: #34373c;
+}
+
+.webform-button--submit:hover {
+	background-color: #34373c;
+}
+
+#footer {
+	background-color: #34373c;
+}
+
+@media screen and (max-width: 768px) {
+  #header #block-headerphone-2 a {
+    border-color: #34373c;
+  }
+}
+
+
+/****** Neutral 40 ******/
+#header #service-menu ul li a:hover::after {
+	background-color: #33373c;
+	opacity: 40%;
+}
+
+#main-top .container #block-flex-callout .basic__body .flex-column:hover::after {
+	background-color: #33373c;
+	opacity: 40%;
+}
+
+
+/****** Neutral 20 ******/
+#header #service-menu li ul li a:hover::after {
+	background-color: #34373d;
+	opacity: 20%;
+}
+
+#main-top .container #block-flex-callout .basic__body .flex-column::after {
+	background-color: #34373d;
+	opacity: 20%;
+}
+
+#block-rightcolumncta::after,
+#block-rightcolumncta--3::after {
+	background-color: #34373d;
+	opacity: 20%;
+}
+
+.page-news .views-row::after {
+	background-color: #34373d;
+	opacity: 20%;
+}
+
+#testimonials::after {
+  background-color: #34373d;
+  opacity: 20%;
+}
+
+
+/****** Snippets ******/
+.snippet > div {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+
+.snippet h3 {
+  color: #333333;
+}
+
+.snippet p {
+  color: #222222;
+}
+
+.snippet-cta a {
+  background-color: #df7027;
+  border-color: #df7027;
+  color: #fff;
+}
+
+.snippet-cta a:hover {
+  background-color: #34373c;
+  border-color: #34373c;
+  color: #fff;
+}
+
+.snippet-cta div,
+#snippet-checkmark-list div,
+#snippet-fontawesome-list div,
+.snippet-fontawesome-list-2 div,
+.snippet-block-quote div {
+  background-color: transparent;
+}

@@ -1,0 +1,66 @@
+# yaml file to define one or more local task(s).
+#
+# Definitions can contain any of the following:
+# title: (required) The untranslated title of the menu link.
+# description: The untranslated description of the link.
+# route_name: (optional) The route name to be used to build the path. Either a
+#   route_name or a link_path must be provided.
+# base_route: Used to group together related tabs.
+# parent_id: Use the parent_id to relate a tab to a parent tab for multiple
+#   levels of tabs.
+# route_parameters: (optional) The route parameters to build the path. An array.
+# link_path: (optional) If you have an external link use link_path instead of
+#   providing a route_name.
+# weight: (optional) An integer that determines the relative position of items
+#   in the menu; higher-weighted items sink. Defaults to 0.
+#   Menu items with the same weight are ordered alphabetically.
+# options: (optional) An array of options to be passed to l() when generating
+#   a link from this menu item.
+
+overseer.tab_1:
+  route_name : overseer_site.settings
+  title: Site
+  base_route: overseer_site.settings
+  weight: 10
+
+overseer.tab_2:
+  route_name: overseer_basic.settings
+  title: Basic
+  base_route: overseer_site.settings
+  weight: 20
+
+overseer.tab_3:
+  route_name: overseer_faq.settings
+  title: FAQ
+  base_route: overseer_site.settings
+  weight: 30
+
+overseer.tab_4:
+  route_name: overseer_news.settings
+  title: News
+  base_route: overseer_site.settings
+  weight: 40
+
+overseer.tab_5:
+  route_name: overseer_person.settings
+  title: Person
+  base_route: overseer_site.settings
+  weight: 50
+
+overseer.tab_6:
+  route_name : overseer_service.settings
+  title: Service
+  base_route: overseer_site.settings
+  weight: 60
+
+overseer.tab_7:
+  route_name : overseer_testimonial.settings
+  title: Testimonial
+  base_route: overseer_site.settings
+  weight: 70
+
+overseer.tab_8:
+  route_name: overseer_webform.settings
+  title: Webform
+  base_route: overseer_site.settings
+  weight: 80

@@ -1,0 +1,14 @@
+# snippet.libraries.yml
+snippet_form:
+  version: VERSION
+  js:
+    js/snippet.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+snippet_page:
+  version: VERSION
+  css:
+    theme:
+      css/snippet.css: {}

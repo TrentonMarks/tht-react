@@ -1,0 +1,9 @@
+# metatag.metatag_defaults.node__faq.yml
+langcode: en
+status: true
+dependencies: {  }
+id: node__faq
+label: 'Content: FAQ'
+tags:
+  schema_qa_page_main_entity: '[site:name]'
+  schema_qa_page_type: FAQPage

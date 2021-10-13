@@ -1,0 +1,5 @@
+# snippet.services.yml
+services:
+  snippet.enabler:
+    class: Drupal\snippet\EnablerService
+    arguments: []

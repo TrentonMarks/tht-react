@@ -1,0 +1,10 @@
+# snippet.routing.yml
+snippet.settings:
+  path: '/admin/config/content/snippet'
+  defaults:
+    _form: '\Drupal\snippet\Form\SnippetSettingsForm'
+    _title: 'Snippet'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

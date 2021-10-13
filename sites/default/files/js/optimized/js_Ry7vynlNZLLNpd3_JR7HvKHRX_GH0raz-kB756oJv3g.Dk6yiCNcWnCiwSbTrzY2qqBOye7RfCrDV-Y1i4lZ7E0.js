@@ -1,0 +1,3 @@
+/* Source and licensing information for the line(s) below can be found at http://tht-react.dd:8083/core/assets/vendor/jquery.ui/ui/safe-active-element-min.js. */
+!function(e){"function"==typeof define&&define.amd?define(["jquery","./version"],e):e(jQuery)}((function(e){return e.ui.safeActiveElement=function(e){var n;try{n=e.activeElement}catch(t){n=e.body}return n||(n=e.body),n.nodeName||(n=e.body),n}}));
+/* Source and licensing information for the above line(s) can be found at http://tht-react.dd:8083/core/assets/vendor/jquery.ui/ui/safe-active-element-min.js. */

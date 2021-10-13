@@ -1,0 +1,57 @@
+# metatag.settings.yml
+entity_type_groups:
+  node:
+    basic:
+      basic: basic
+      advanced: advanced
+      facebook: facebook
+      schema_web_site: schema_web_site
+      site_verification: site_verification
+      google_cse: google_cse
+    faq:
+      basic: basic
+      advanced: advanced
+      facebook: facebook
+      schema_qa_page: schema_qa_page
+      schema_web_site: schema_web_site
+      site_verification: site_verification
+      google_cse: google_cse
+    news:
+      basic: basic
+      advanced: advanced
+      facebook: facebook
+      schema_article: schema_article
+      schema_web_site: schema_web_site
+      site_verification: site_verification
+      google_cse: google_cse
+    person:
+      basic: basic
+      advanced: advanced
+      facebook: facebook
+      schema_person: schema_person
+      schema_web_site: schema_web_site
+      site_verification: site_verification
+      google_cse: google_cse
+    service:
+      basic: basic
+      advanced: advanced
+      facebook: facebook
+      schema_service: schema_service
+      schema_web_site: schema_web_site
+      site_verification: site_verification
+      google_cse: google_cse
+    testimonial:
+      basic: basic
+      advanced: advanced
+      facebook: facebook
+      schema_review: schema_review
+      schema_web_site: schema_web_site
+      site_verification: site_verification
+      google_cse: google_cse
+    webform:
+      basic: basic
+      advanced: advanced
+      facebook: facebook
+      schema_web_site: schema_web_site
+      site_verification: site_verification
+      google_cse: google_cse

@@ -1,0 +1,5 @@
+# snippet.permissions.yml
+administer snippet:
+  title: 'Administer Snippet Settings'
+  description: 'Access the Snippet administrative settings page.'
+  restrict access: true

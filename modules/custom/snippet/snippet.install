@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\snippet\Entity\Snippet;
+
+/**
+ * Implements hook_schema().
+ *
+ * For tracking if a snippet is enabled for a content type
+ */
+function snippet_schema() {
+  $schema['snippet_enabled'] = [
+    'description' => 'Tracks if Snippet is enabled for a node.',
+    'fields' => [
+      'nid' => [
+        'description' => 'The {node}.nid that has Snippet enabled.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['nid'],
+  ];
+  return $schema;
+}

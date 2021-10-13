@@ -1,0 +1,3 @@
+/* Source and licensing information for the line(s) below can be found at http://tht-react.dd:8083/core/assets/vendor/jquery.ui/ui/escape-selector-min.js. */
+!function(e){"function"==typeof define&&define.amd?define(["jquery","./version"],e):e(jQuery)}((function(e){return e.ui.escapeSelector=(n=/([!"#$%&'()*+,./:;<=>?@[\]^`{|}~])/g,function(e){return e.replace(n,"\\$1")});var n}));
+/* Source and licensing information for the above line(s) can be found at http://tht-react.dd:8083/core/assets/vendor/jquery.ui/ui/escape-selector-min.js. */

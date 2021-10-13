@@ -1,0 +1,11 @@
+# snippet.schema.yml
+snippet.settings:
+  type: config_object
+  label: Snippet Content Type Settings
+  mapping:
+    enabled_types:
+      type: sequence
+      label: Content types the Snippet field can display on
+      sequence:
+        type: string
+        label: Content type

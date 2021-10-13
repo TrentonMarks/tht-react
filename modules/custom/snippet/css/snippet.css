@@ -1,0 +1,241 @@
+/* ALL SNIPPETS */
+.snippet { /* all containers */
+  margin: 0 0 10px 0;
+}
+
+.snippet > div { /* all boxes */
+  background: #f0f0f0; /* light gray */
+  color: #333333; /* light black */
+  padding: 20px 20px;
+}
+
+.snippet h3 { /* all h3 elements */
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.snippet p { /* all p elements */
+  margin-bottom: 5px;
+  color: #222222;
+}
+
+.snippet p:last-of-type { /* the last p element in each box */
+  margin-bottom: 0;
+}
+
+/* 1 COLUMN BOX */
+.snippet-1-col-box {} /* No extra styles necessary */
+
+/* 2 COLUMN BOX */
+.snippet-2-col-box { /* container */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.snippet-2-col-box div:nth-of-type(1) { /* 1st box */
+  margin: 0 5px 0 0;
+}
+
+.snippet-2-col-box div:nth-of-type(2) { /* 2nd box */
+  margin: 0 0 0 5px;
+}
+
+/* 3 COLUMN BOX */
+.snippet-3-col-box { /* container */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.snippet-3-col-box div:nth-of-type(1) { /* 1st box */
+  margin: 0 5px 0 0;
+}
+
+.snippet-3-col-box div:nth-of-type(2) { /* 2nd box */
+  margin: 0 5px;
+}
+
+.snippet-3-col-box div:nth-of-type(3) { /* 3rd box */
+  margin: 0 0 0 5px;
+}
+
+@media screen and (max-width: 600px) { /* If screen width is < 600px */
+  .snippet-3-col-box {
+    flex-direction: column;
+  }
+  .snippet-3-col-box div:nth-of-type(2) { /* 2nd box */
+    margin: 10px 0;
+  }
+}
+
+/* 4 SQUARE BOX */
+.snippet-4-sq-box { /* container */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.snippet-4-sq-box div { /* all 4 boxes */
+  width: calc(50% - 5px);
+}
+
+.snippet-4-sq-box div:nth-of-type(1) { /* 1st box */
+  margin: 0 5px 5px 0;
+}
+
+.snippet-4-sq-box div:nth-of-type(2) { /* 2nd box */
+  margin: 0 0 5px 5px;
+}
+
+.snippet-4-sq-box div:nth-of-type(3) { /* 3rd box */
+  margin: 5px 5px 0 0;
+}
+
+.snippet-4-sq-box div:nth-of-type(4) { /* 4th box */
+  margin: 5px 0 0 5px;
+}
+
+/* CTA BUTTON */
+.snippet-cta div {
+  display: flex;
+  justify-content: center;
+  background: 0;
+}
+
+.snippet-cta a {
+  background-color: #df7027;
+  border: 5px #df7027 solid;
+  padding: 3% 10%;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.snippet-cta a:hover {
+  background-color: #34373c;
+  border-color: #34373c;
+  color: #fff;
+}
+
+/* CHECKMARK LIST */
+.snippet-checkmark-list { /* container */
+  margin: 0 auto 10px;
+}
+
+#snippet-checkmark-list div {
+  background: 0;
+}
+
+#main .snippet-checkmark-list #snippet-checkmark-ul, /* This line overrides TH_base2 (custom theme) ul's in the main section  */
+.snippet-checkmark-list ul { /* unordered list */
+  margin: 10px 0 0;
+}
+
+.snippet-checkmark-list li { /* list item */
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px;
+  font-size: 14px;
+}
+
+.snippet-checkmark-list li:last-of-type { /* last list item */
+  margin: 0;
+}
+
+.snippet-checkmark-list img { /* checkmark image */
+  height: 20px;
+  width: 20px;
+  margin: 0 10px 0 0;
+}
+
+/* FONT AWESOME ICON LIST */
+.snippet-fontawesome-list { /* container */
+  margin: 0 auto 10px;
+}
+
+#snippet-fontawesome-list div {
+  background: 0;
+}
+
+#main .snippet-fontawesome-list #snippet-fontawesome-ul, /* This line overrides TH_base2 (custom theme) ul's in the main section  */
+.snippet-fontawesome-list ul { /* unordered list */
+  margin: 10px 0 0;
+}
+
+.snippet-fontawesome-list li { /* list item */
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px;
+  font-size: 14px;
+}
+
+.snippet-fontawesome-list li:last-of-type { /* last list item */
+  margin: 0;
+}
+
+.snippet-fontawesome-list svg { /* icon image */
+  margin: 0 10px 0 0;
+}
+
+/* FONT AWESOME ICON LIST 2 */
+.snippet-fontawesome-list-2 { /* container */
+  margin: 0 auto 10px;
+}
+
+.snippet-fontawesome-list-2 div {
+  background: 0;
+}
+
+#main .snippet-fontawesome-list-2 #snippet-fontawesome-ul-2, /* This line overrides TH_base2 (custom theme) ul's in the main section  */
+.snippet-fontawesome-list-2 ul { /* unordered list */
+  margin: 10px 0 0;
+}
+
+.snippet-fontawesome-list-2 li { /* list item */
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px;
+  font-size: 14px;
+}
+
+.snippet-fontawesome-list-2 li:last-of-type { /* last list item */
+  margin: 0;
+}
+
+.snippet-fontawesome-list-2 svg { /* icon image */
+  margin: 0 10px 0 10px;
+}
+
+.snippet-fontawesome-list-2 li p {
+  padding: 20px 3% 20px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid;
+}
+
+.snippet-fontawesome-list-2 li:last-of-type p {
+  border-bottom: 0;
+}
+
+/* BLOCK QUOTE */
+.snippet-block-quote { /* container */
+  max-width: 600px;
+  margin: 0 auto 10px;
+}
+
+.snippet-block-quote div { /* icons/text container */
+  display: flex;
+  background: 0;
+}
+
+.snippet-block-quote svg:first-of-type { /* icon image of quotation mark */
+  margin-right: 10px;
+  align-self: flex-start;
+}
+
+.snippet-block-quote svg:last-of-type { /* icon image of quotation mark */
+  margin-left: 10px;
+  align-self: flex-end;
+}

@@ -1,0 +1,80 @@
+# overseer.routing.yml
+overseer_site.settings:
+  path: '/admin/config/system/overseer/site'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerSiteSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+overseer_service.settings:
+  path: '/admin/config/system/overseer/service'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerServiceSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+overseer_person.settings:
+  path: '/admin/config/system/overseer/person'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerPersonSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+overseer_news.settings:
+  path: '/admin/config/system/overseer/news'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerNewsSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+overseer_testimonial.settings:
+  path: '/admin/config/system/overseer/testimonial'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerTestimonialSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+overseer_faq.settings:
+  path: '/admin/config/system/overseer/faq'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerFAQSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+overseer_basic.settings:
+  path: '/admin/config/system/overseer/basic'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerBasicSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
+overseer_webform.settings:
+  path: '/admin/config/system/overseer/webform'
+  defaults:
+    _form: '\Drupal\overseer\Form\OverseerWebformSettingsForm'
+    _title: 'Overseer'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

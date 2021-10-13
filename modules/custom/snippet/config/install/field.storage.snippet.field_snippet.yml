@@ -1,0 +1,19 @@
+# field.storage.snippet.field_snippet.yml
+langcode: en
+status: true
+dependencies:
+  module:
+    - snippet
+    - text
+id: snippet.field_snippet
+field_name: field_snippet
+entity_type: snippet
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

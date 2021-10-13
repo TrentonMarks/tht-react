@@ -1,0 +1,25 @@
+# field.field.node.service.body.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.service
+  module:
+    - text
+_core:
+  default_config_hash: jm-sjqCo13PIpKU4FZ3vU6s7zxWyJZg_Q8n84bsDuSI
+id: node.service.body
+field_name: body
+entity_type: node
+bundle: service
+label: Body
+description: 'The body of your content.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

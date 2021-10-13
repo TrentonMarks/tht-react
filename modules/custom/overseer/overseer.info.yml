@@ -1,0 +1,9 @@
+# overseer.info.yml
+name: Overseer
+description: Allows admins to configure a variety of site and content settings.
+package: Custom
+type: module
+version: 8.x-1.0
+core: 8.x
+core_version_requirement: ^8 || ^9
+configure: overseer_site.settings

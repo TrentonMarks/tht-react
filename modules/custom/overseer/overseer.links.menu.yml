@@ -1,0 +1,7 @@
+# overseer.links.menu.yml
+overseer_site.settings:
+  title: Overseer settings
+  description: Allows admins to configure a variety of site settings in a single form.
+  route_name: overseer_site.settings
+  parent: system.admin_config_system
+  weight: -100

@@ -1,0 +1,15 @@
+# metatag.metatag_defaults.global.yml
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: udEKo2owcetJxp5C5uwqcklny906_iP50AHcpgUcHbE
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url]'
+  title: '[current-page:title] | [site:name]'
+  schema_web_site_id: '[site:url]'
+  schema_web_site_url: '[site:url]'
+  schema_web_site_name: '[site:name]'
+  schema_web_site_type: WebSite

@@ -1,0 +1,29 @@
+# field.field.node.service.field_block_reference.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.node.field_block_reference
+    - node.type.service
+id: node.service.field_block_reference
+field_name: field_block_reference
+entity_type: node
+bundle: service
+label: 'Block Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      basic: basic
+    sort:
+      field: info
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,23 @@
+# field.field.node.faq.field_question.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_question
+    - node.type.faq
+  module:
+    - text
+id: node.faq.field_question
+field_name: field_question
+entity_type: node
+bundle: faq
+label: Question
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,3 @@
+/* Source and licensing information for the line(s) below can be found at http://tht-react.dd:8083/core/themes/bartik/css/components/captions.css. */
+.caption{margin-bottom:1.2em}.caption>*{padding:.5ex;border:1px solid #ccc;background:#f3f3f3}.caption>figcaption{padding-top:.5ex;text-align:center;border:1px solid #ccc;border-top:0;font-size:small}.caption-pre>pre,.caption-blockquote>blockquote{margin:0}.caption-blockquote>figcaption::before{content:"— "}.caption-blockquote>figcaption{text-align:left}[dir="rtl"] .caption-blockquote>figcaption{text-align:right}
+/* Source and licensing information for the above line(s) can be found at http://tht-react.dd:8083/core/themes/bartik/css/components/captions.css. */

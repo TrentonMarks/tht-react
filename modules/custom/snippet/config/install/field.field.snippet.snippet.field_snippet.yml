@@ -1,0 +1,21 @@
+# field.field.snippet.snippet.field_snippet.yml
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.snippet.field_snippet
+  module:
+    - snippet
+    - text
+id: snippet.snippet.field_snippet
+field_name: field_snippet
+entity_type: snippet
+bundle: snippet
+label: Snippet
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
