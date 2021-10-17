@@ -1,5 +1,6 @@
+// URL for Headless site
 const config = {
-  base: 'http://tht-react.dd:8083/'
+  base: 'https://headless.turtlehut.dev/'
 };
 
 export default config;

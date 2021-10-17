@@ -24,10 +24,12 @@ const TESTIMONIALS_URL = `${API_ROOT}block_content/basic/ab34ef71-3aeb-4774-8bd6
 const FOOTER_URL = `${API_ROOT}block_content/basic/71dc3360-abee-4054-8483-b654a7dfc70a`; // to Footer
 const COPYRIGHT_URL = `${API_ROOT}block_content/basic/15efb737-de5c-47de-ba1b-d4aa4e40e591`; // to Copyright
 
-const HOME_URL = 'http://localhost:3000/home-page';
-const CONTACTUS_URL = 'http://localhost:3000/contact-us';
+const FRONTEND_URL = 'https://react.turtlehut.dev:3000';
+
+const HOME_URL = `${FRONTEND_URL}/home-page`;
+const CONTACTUS_URL = `${FRONTEND_URL}/contact-us`;
 if (window.location.href === HOME_URL) {
-  window.location = 'http://localhost:3000';
+  window.location = `${FRONTEND_URL}`;
 }
 
 class App extends Component{
@@ -223,8 +225,8 @@ class App extends Component{
 
   }
   checkIfHomePage(){
-    if (window.location.href !== 'http://localhost:3000' &&
-        window.location.href !== 'http://localhost:3000/'&&
+    if (window.location.href !== `${FRONTEND_URL}` &&
+        window.location.href !== `${FRONTEND_URL}/` &&
         window.location.href !== HOME_URL) {
           this.setState({ isHomePage: false });
     } else {
