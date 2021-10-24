@@ -1,6 +1,11 @@
-// Import React, Stylesheets, Components, Config
+// Import React, React Router, Stylesheets, Components, Config
 import React, { Component } from 'react'; // React
-import './App.css'; // Stylesheet
+import { // React Router
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import TopTopNavRegion from './Components/TopTopNav/TopTopNavRegion'; // Component
 import HeaderRegion from './Components/Header/HeaderRegion'; // Component
 import HeroRegion from './Components/Hero/HeroRegion'; // Component
@@ -8,26 +13,27 @@ import MainSection from './Components/Main/MainSection'; // Component
 import TestimonialsRegion from './Components/Testimonials/TestimonialsRegion'; // Component
 import FooterRegion from './Components/Footer/FooterRegion'; // Component
 import config from './config'; // Config
+import './App.css'; // Stylesheet
 
 // URLs To Json APIs
 const API_ROOT = `${config.base}jsonapi/`; // JSON API Root
 const TOPTOPNAV_URL = `${config.base}entity/menu/top-top-nav/tree`; // to Top Top Nav
-const HEADERPHONE_URL = `${API_ROOT}block_content/basic/8beb3cb2-c57d-4886-96df-ad398f0e3972`; // to Header Phone
+const HEADERPHONE_URL = `${API_ROOT}block_content/basic/397c9fa5-f52d-4412-8e4f-7fcca8a61077`; // to Header Phone
 const MAINMENU_URL = `${config.base}entity/menu/main/tree`; // to Main Menu
-const HERO_URL = `${API_ROOT}block_content/basic/b5c89aa5-0df2-4fed-89b7-99179c5b8fd7`; // to Hero
-const CALLOUTS_URL = `${API_ROOT}block_content/basic/07127283-809c-454f-8339-67fd5e9acc84`; // to Callouts
+const HERO_URL = `${API_ROOT}block_content/basic/e5341de9-66fc-4e0c-aced-cc31037e31f5`; // to Hero
+const CALLOUTS_URL = `${API_ROOT}block_content/basic/9cc2df76-b2c7-4723-97f5-ceb20b0730e9`; // to Callouts
 const BASIC_URL = `${API_ROOT}node/basic`; // to Basic Page
 const SERVICE_URL = `${API_ROOT}node/service`; // to Service Page
-const SIDEBAR_URL = `${API_ROOT}block_content/basic/e8988f16-e881-4a9e-a3e4-e6fdc72b1518`; // to Right Column CTA
-const WEBFORM_URL = `${API_ROOT}webform/webform/4a1e93c6-a1e9-4c34-a6ff-63cc53d4ad05`; // to Webform
-const TESTIMONIALS_URL = `${API_ROOT}block_content/basic/ab34ef71-3aeb-4774-8bd6-19803c337998`; // to Testimonials
-const FOOTER_URL = `${API_ROOT}block_content/basic/71dc3360-abee-4054-8483-b654a7dfc70a`; // to Footer
-const COPYRIGHT_URL = `${API_ROOT}block_content/basic/15efb737-de5c-47de-ba1b-d4aa4e40e591`; // to Copyright
+const SIDEBAR_URL = `${API_ROOT}block_content/basic/3ecd9095-5cae-4090-8c49-c13f2588f501`; // to Right Column CTA
+const WEBFORM_URL = `${API_ROOT}webform/webform/69f5e66f-0647-427a-82ff-309d6ab3e706`; // to Webform
+const TESTIMONIALS_URL = `${API_ROOT}block_content/basic/19aac192-eba1-402e-890a-c1489b4f4130`; // to Testimonials
+const FOOTER_URL = `${API_ROOT}block_content/basic/30df225e-06be-44ed-9605-b4cd981e2ea8`; // to Footer
+const COPYRIGHT_URL = `${API_ROOT}block_content/basic/64eea71f-bf40-4bf9-88b7-72da8c9f747c`; // to Copyright
 
-const FRONTEND_URL = 'https://react.turtlehut.dev:3000';
+const FRONTEND_URL = 'https://tht-react.trentmarks.dev/';
 
-const HOME_URL = `${FRONTEND_URL}/home-page`;
-const CONTACTUS_URL = `${FRONTEND_URL}/contact-us`;
+const HOME_URL = `${FRONTEND_URL}home-page`;
+const CONTACTUS_URL = `${FRONTEND_URL}contact-us`;
 if (window.location.href === HOME_URL) {
   window.location = `${FRONTEND_URL}`;
 }
@@ -241,55 +247,60 @@ class App extends Component{
   render(){
 
     return (
-      <div>
-        <div id="mm-0" className="mm-page mm-slideout">
-          <div className="responsive-menu-page-wrapper">
-          <div className="layout-container">
-            <TopTopNavRegion
-              topTopNav={this.state.topTopNav}
-              headerPhone={this.state.headerPhone}
-            />
-            <HeaderRegion
-              mainMenu={this.state.mainMenu}
-            />
-            {/* If Home Page. */
-              this.state.isHomePage
-              ?
-              /* Render Hero and Callouts */
-              <div>
-                <HeroRegion
-                  hero={this.state.hero}
-                />
+      <Router>
+        <div>
+          <div id="mm-0" className="mm-page mm-slideout">
+            <div className="responsive-menu-page-wrapper">
+            <div className="layout-container">
+              <TopTopNavRegion
+                topTopNav={this.state.topTopNav}
+                headerPhone={this.state.headerPhone}
+              />
+              <HeaderRegion
+                mainMenu={this.state.mainMenu}
+                service={this.state.service}
+                loadService={this.loadService}
+                updateService={this.updateService}
+              />
+              {/* If Home Page. */
+                this.state.isHomePage
+                ?
+                /* Render Hero and Callouts */
+                <div>
+                  <HeroRegion
+                    hero={this.state.hero}
+                  />
+                  <MainSection
+                    callouts={this.state.callouts}
+                    basic={this.state.basic}
+                    service={this.state.service}
+                    sidebar={this.state.sidebar}
+                    webform={this.state.webform}
+                    isHomePage={this.state.isHomePage}
+                    isContactUsPage={this.state.isContactUsPage}
+                  />
+                </div>
+                :
                 <MainSection
-                  callouts={this.state.callouts}
                   basic={this.state.basic}
                   service={this.state.service}
                   sidebar={this.state.sidebar}
                   webform={this.state.webform}
-                  isHomePage={this.state.isHomePage}
                   isContactUsPage={this.state.isContactUsPage}
                 />
-              </div>
-              :
-              <MainSection
-                basic={this.state.basic}
-                service={this.state.service}
-                sidebar={this.state.sidebar}
-                webform={this.state.webform}
-                isContactUsPage={this.state.isContactUsPage}
+              }
+              <TestimonialsRegion
+                testimonials={this.state.testimonials}
               />
-            }
-            <TestimonialsRegion
-              testimonials={this.state.testimonials}
-            />
-            <FooterRegion
-              footer={this.state.footer}
-              copyright={this.state.copyright}
-            />
-          </div>
+              <FooterRegion
+                footer={this.state.footer}
+                copyright={this.state.copyright}
+              />
+            </div>
+            </div>
           </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }

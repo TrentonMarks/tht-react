@@ -1,6 +1,6 @@
 // URL for Headless site
 const config = {
-  base: 'https://headless.turtlehut.dev/'
+  base: 'https://tht-headless.trentmarks.dev/'
 };
 
 export default config;
