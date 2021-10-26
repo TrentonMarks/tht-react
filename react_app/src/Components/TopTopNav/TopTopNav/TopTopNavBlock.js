@@ -14,7 +14,8 @@ export default class TopTopNavBlock extends React.Component {
   }
 
   render() {
-    let data = this.props.data;
+    let topTopNav = this.props.topTopNav;
+    let loadBasic = this.props.loadBasic;
     let className;
     if (this.state.toggleOn) {
       className = 'menu sf-menu sf-top-top-nav sf-style-none sf-accordion sf-expanded'
@@ -50,11 +51,11 @@ export default class TopTopNavBlock extends React.Component {
 
         <ul id="superfish-top-top-nav" className="menu sf-menu sf-top-top-nav sf-horizontal sf-style-none sf-js-enabled sf-shadow">
           {
-            data !== null &&
-            data !== undefined &&
-            data.length > 0
+            topTopNav !== null &&
+            topTopNav !== undefined &&
+            topTopNav.length > 0
             ?
-            data.map(item => <TopTopNavItem {...item} key={item.link.weight}/>)
+            <TopTopNavItem topTopNav={topTopNav} loadBasic={loadBasic} />
             :
             null
           }

@@ -7,6 +7,7 @@ export default class FooterRegion extends React.Component {
   render() {
     let footer = this.props.footer;
     let copyright = this.props.copyright;
+    let loadService = this.props.loadService;
 
     return (
       <footer id="footer">
@@ -17,7 +18,7 @@ export default class FooterRegion extends React.Component {
                 footer !== null &&
                 footer !== undefined
                 ?
-                <FooterBlock data={footer} />
+                <FooterBlock footer={footer} loadService={loadService} />
                 :
                 null
               }
@@ -25,7 +26,7 @@ export default class FooterRegion extends React.Component {
                 copyright !== null &&
                 copyright !== undefined
                 ?
-                <CopyrightBlock data={copyright} />
+                <CopyrightBlock copyright={copyright} />
                 :
                 null
               }

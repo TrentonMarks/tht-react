@@ -7,9 +7,7 @@ export default class HeaderRegion extends React.Component {
 
   render() {
     let mainMenu = this.props.mainMenu;
-    let service = this.props.service;
     let loadService = this.props.loadService;
-    let updateService = this.props.updateService;
 
     return (
       <header id="header">
@@ -17,7 +15,9 @@ export default class HeaderRegion extends React.Component {
           <div id="header-region">
             <div>
               <ResponsiveMenuIconBlock />
-              <HeaderLogoBlock />
+              <HeaderLogoBlock
+                loadService={loadService}
+              />
             </div>
           </div>
           <nav id="service-menu" className="menu">
@@ -29,9 +29,7 @@ export default class HeaderRegion extends React.Component {
                   ?
                   <HorizontalMenuBlock
                     mainMenu={mainMenu}
-                    service={service}
                     loadService={loadService}
-                    updateService={updateService}
                   />
                   :
                   null

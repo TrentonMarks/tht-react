@@ -1,18 +1,30 @@
 import React from 'react'; // import React
+import { withRouter } from 'react-router-dom';
 
-export default class CalloutsBlock extends React.Component {
+class CalloutsBlock extends React.Component {
 
   render() {
-    let data = this.props.callouts;
-    
+    let callouts = this.props.callouts;
+    let loadService = this.props.loadService;
+
+    let updateRoute = (event) => {
+      event.preventDefault();
+      let targetLink = event.target.closest('a');
+      this.props.history.push(targetLink.getAttribute('href'));
+      loadService();
+    }
+
     return (
       <div id="block-flex-callout" className="contextual-region block-block-content block-flex-callout">
-      <div
-        className="basic__body"
-        dangerouslySetInnerHTML={{__html: data.attributes.body.value}}
-      />
+        <div
+          onClick={(event)=>{updateRoute(event)}}
+          className="basic__body"
+          dangerouslySetInnerHTML={{__html: callouts.attributes.body.value}}
+        />
       </div>
     );
   }
 
 }
+
+export default withRouter(CalloutsBlock);

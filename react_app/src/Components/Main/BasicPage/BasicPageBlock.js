@@ -1,13 +1,23 @@
 import React from 'react'; // import React
+import { withRouter } from 'react-router-dom';
 import ContactUsPageBlock from "./ContactUsPageBlock"; // import component
 
 
-export default class BasicPageBlock extends React.Component {
+class BasicPageBlock extends React.Component {
 
   render() {
     let basic = this.props.basic;
     let service = this.props.service;
     let isContactUsPage = this.props.isContactUsPage;
+    let loadService = this.props.loadService;
+
+    let updateRoute = (event) => {
+      event.preventDefault();
+      let targetLink = event.target.closest('a');
+      this.props.history.push(targetLink.getAttribute('href'));
+      loadService();
+    }
+
     let pageBody, pageTitle, currentPath;
     for (let i = 0; i < basic.length; i++) {
       if (basic[i].attributes.path.alias === window.location.pathname) {
@@ -45,7 +55,10 @@ export default class BasicPageBlock extends React.Component {
             <article data-history-node-id="8" className="contextual-region node" about={currentPath} typeof="schema:WebPage">
               <div className="content">
                 <div property="schema:text" className="page__body">
-                  <div dangerouslySetInnerHTML={{__html: pageBody}} />
+                  <div
+                    onClick={(event)=>{updateRoute(event)}}
+                    dangerouslySetInnerHTML={{__html: pageBody}}
+                  />
                 </div>
               </div>
             </article>
@@ -58,3 +71,5 @@ export default class BasicPageBlock extends React.Component {
   }
 
 }
+
+export default withRouter(BasicPageBlock);

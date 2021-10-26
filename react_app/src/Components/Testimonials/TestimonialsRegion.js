@@ -5,6 +5,7 @@ export default class TestimonialsRegion extends React.Component {
 
   render() {
     let testimonials = this.props.testimonials;
+    let loadService = this.props.loadService;
 
     return (
       <div id="testimonials" className="testimonials">
@@ -14,7 +15,7 @@ export default class TestimonialsRegion extends React.Component {
               testimonials !== null &&
               testimonials !== undefined
               ?
-              <TestimonialsBlock data={testimonials} />
+              <TestimonialsBlock testimonials={testimonials} loadService={loadService} />
               :
               null
             }

@@ -1,18 +1,30 @@
 import React from 'react'; // import React
+import { withRouter } from 'react-router-dom';
 
-export default class HeroBlock extends React.Component {
+class HeroBlock extends React.Component {
 
   render() {
-    let { data } = this.props;
-    
+    let hero = this.props.hero;
+    let loadService = this.props.loadService;
+
+    let updateRoute = (event) => {
+      event.preventDefault();
+      let targetLink = event.target.closest('a');
+      this.props.history.push(targetLink.getAttribute('href'));
+      loadService();
+    }
+
     return (
       <div id="block-hero" className="contextual-region block-block-content block-hero">
         <div
+          onClick={(event)=>{updateRoute(event)}}
           className="basic__body"
-          dangerouslySetInnerHTML={{__html: data.attributes.body.value}}
+          dangerouslySetInnerHTML={{__html: hero.attributes.body.value}}
         />
       </div>
     );
   }
 
 }
+
+export default withRouter(HeroBlock);

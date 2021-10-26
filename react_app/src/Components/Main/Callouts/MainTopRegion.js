@@ -5,6 +5,7 @@ export default class MainTopRegion extends React.Component {
 
   render() {
     let callouts = this.props.callouts;
+    let loadService = this.props.loadService;
 
     return (
       <div id="main-top">
@@ -16,6 +17,7 @@ export default class MainTopRegion extends React.Component {
               ?
               <CalloutsBlock
                 callouts={callouts}
+                loadService={loadService}
               />
               :
               null

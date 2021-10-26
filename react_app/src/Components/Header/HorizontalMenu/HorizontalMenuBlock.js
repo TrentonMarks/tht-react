@@ -5,9 +5,7 @@ export default class HorizontalMenuBlock extends React.Component {
 
   render() {
     let mainMenu = this.props.mainMenu;
-    let service = this.props.service;
     let loadService = this.props.loadService;
-    let updateService = this.props.updateService;
 
     return (
       <div id="block-horizontalmenu" className="contextual-region block-responsive-menu block-horizontalmenu">
@@ -18,8 +16,7 @@ export default class HorizontalMenuBlock extends React.Component {
               mainMenu !== undefined &&
               mainMenu.length > 0
               ?
-              // mainMenu.map(item => <HorizontalMenuItem {...item} key={item.link.weight} mainMenu={mainMenu} service={service} loadService={loadService} updateService={updateService}/>)
-              <HorizontalMenuItem mainMenu={mainMenu} service={service} loadService={loadService} updateService={updateService} />
+              <HorizontalMenuItem mainMenu={mainMenu} loadService={loadService} />
               :
               null
             }

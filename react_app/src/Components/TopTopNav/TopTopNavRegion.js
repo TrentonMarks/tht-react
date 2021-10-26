@@ -7,6 +7,7 @@ export default class TopTopNavRegion extends React.Component {
   render() {
     let topTopNav = this.props.topTopNav;
     let headerPhone = this.props.headerPhone;
+    let loadBasic = this.props.loadBasic;
 
     return (
       <nav id="top-top-nav" className="menu">
@@ -16,7 +17,10 @@ export default class TopTopNavRegion extends React.Component {
             topTopNav !== null &&
             topTopNav !== undefined
             ?
-            <TopTopNavBlock data={topTopNav} />
+            <TopTopNavBlock
+              topTopNav={topTopNav}
+              loadBasic={loadBasic}
+            />
             :
             null
           }
@@ -24,7 +28,7 @@ export default class TopTopNavRegion extends React.Component {
             headerPhone !== null &&
             headerPhone !== undefined
             ?
-            <HeaderPhoneBlock data={headerPhone} />
+            <HeaderPhoneBlock headerPhone={headerPhone} />
             :
             null
           }

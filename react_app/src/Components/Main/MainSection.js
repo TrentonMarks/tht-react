@@ -9,6 +9,7 @@ export default class MainSection extends React.Component {
     let callouts = this.props.callouts;
     let basic = this.props.basic;
     let service = this.props.service;
+    let loadService = this.props.loadService;
     let sidebar = this.props.sidebar;
     let webform = this.props.webform;
     let isHomePage = this.props.isHomePage;
@@ -17,15 +18,24 @@ export default class MainSection extends React.Component {
     return (
       <div id="main">
         <div className="container">
-          <MainTopRegion
-            callouts={callouts}
-          />
+          {/* If data exists for Callouts */
+            isHomePage
+            ?
+            /* Render Main Top region */
+            <MainTopRegion
+              callouts={callouts}
+              loadService={loadService}
+            />
+            :
+            null
+          }
           <div id="content-wrapper">
             <BasicPageRegion
               basic={basic}
               service={service}
               isHomePage={isHomePage}
               isContactUsPage={isContactUsPage}
+              loadService={loadService}
             />
             {isContactUsPage
               ?

@@ -1,10 +1,8 @@
 // Import React, React Router, Stylesheets, Components, Config
 import React, { Component } from 'react'; // React
-import { // React Router
+import { // import React Router
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  NavLink
 } from "react-router-dom";
 import TopTopNavRegion from './Components/TopTopNav/TopTopNavRegion'; // Component
 import HeaderRegion from './Components/Header/HeaderRegion'; // Component
@@ -30,6 +28,7 @@ const TESTIMONIALS_URL = `${API_ROOT}block_content/basic/19aac192-eba1-402e-890a
 const FOOTER_URL = `${API_ROOT}block_content/basic/30df225e-06be-44ed-9605-b4cd981e2ea8`; // to Footer
 const COPYRIGHT_URL = `${API_ROOT}block_content/basic/64eea71f-bf40-4bf9-88b7-72da8c9f747c`; // to Copyright
 
+// URL To React App
 const FRONTEND_URL = 'https://tht-react.trentmarks.dev/';
 
 const HOME_URL = `${FRONTEND_URL}home-page`;
@@ -44,7 +43,7 @@ class App extends Component{
     // Set State
     this.state = {
       isHomePage: null,
-      isContactUsPage: false,
+      isContactUsPage: null,
       topTopNav: null,
       headerPhone: null,
       mainMenu: null,
@@ -55,8 +54,7 @@ class App extends Component{
       sidebar: null,
       webform: null,
       footer: null,
-      copyright: null,
-      contentType: ''
+      copyright: null
     };
     // Load Methods
     this.loadTopTopNav = this.loadTopTopNav.bind(this);
@@ -85,7 +83,6 @@ class App extends Component{
     this.updateFooter = this.updateFooter.bind(this);
     this.updateCopyright = this.updateCopyright.bind(this);
     // Misc Methods
-    this.findContentType = this.findContentType.bind(this);
     this.checkIfHomePage = this.checkIfHomePage.bind(this);
     this.checkIfContactUsPage = this.checkIfContactUsPage.bind(this);
   }
@@ -103,9 +100,8 @@ class App extends Component{
     this.loadTestimonials();
     this.loadFooter();
     this.loadCopyright();
-    this.checkIfHomePage();
+    // this.checkIfHomePage();
     this.checkIfContactUsPage();
-    this.findContentType();
   }
   loadTopTopNav(){
     // Fetch Top Top Nav.
@@ -166,6 +162,7 @@ class App extends Component{
   }
   updateBasic(responseData){
     this.setState({ basic: responseData.data });
+    this.checkIfHomePage();
   }
   loadService(){
     // Fetch Page Content.
@@ -176,6 +173,7 @@ class App extends Component{
   }
   updateService(responseData){
     this.setState({ service: responseData.data });
+    this.checkIfHomePage();
   }
   loadSidebar(){
     // Fetch Sidebar.
@@ -227,16 +225,18 @@ class App extends Component{
   updateCopyright(responseData){
     this.setState({ copyright: responseData.data });
   }
-  findContentType(){
-
-  }
-  checkIfHomePage(){
-    if (window.location.href !== `${FRONTEND_URL}` &&
-        window.location.href !== `${FRONTEND_URL}/` &&
-        window.location.href !== HOME_URL) {
-          this.setState({ isHomePage: false });
+  checkIfHomePage(url){
+    console.log('check if homepage');
+    if (window.location.href === `${FRONTEND_URL}` ||
+        window.location.href === `${FRONTEND_URL}/` ||
+        window.location.href === HOME_URL ||
+        url === `${FRONTEND_URL}` ||
+        url === `${FRONTEND_URL}/` ||
+        url === HOME_URL ||
+        url === '/') {
+          this.setState({ isHomePage: true });
     } else {
-      this.setState({ isHomePage: true });
+      this.setState({ isHomePage: false });
     }
   }
   checkIfContactUsPage(){
@@ -248,56 +248,49 @@ class App extends Component{
 
     return (
       <Router>
-        <div>
-          <div id="mm-0" className="mm-page mm-slideout">
-            <div className="responsive-menu-page-wrapper">
-            <div className="layout-container">
-              <TopTopNavRegion
-                topTopNav={this.state.topTopNav}
-                headerPhone={this.state.headerPhone}
-              />
-              <HeaderRegion
-                mainMenu={this.state.mainMenu}
-                service={this.state.service}
+        <div id="mm-0" className="mm-page mm-slideout">
+          <div className="responsive-menu-page-wrapper">
+          <div className="layout-container">
+            <TopTopNavRegion
+              topTopNav={this.state.topTopNav}
+              headerPhone={this.state.headerPhone}
+              loadBasic={this.loadBasic}
+            />
+            <HeaderRegion
+              mainMenu={this.state.mainMenu}
+              loadService={this.loadService}
+            />
+            {/* If Home Page. */
+              this.state.isHomePage
+              ?
+              /* Render Hero region */
+              <HeroRegion
+                hero={this.state.hero}
                 loadService={this.loadService}
-                updateService={this.updateService}
               />
-              {/* If Home Page. */
-                this.state.isHomePage
-                ?
-                /* Render Hero and Callouts */
-                <div>
-                  <HeroRegion
-                    hero={this.state.hero}
-                  />
-                  <MainSection
-                    callouts={this.state.callouts}
-                    basic={this.state.basic}
-                    service={this.state.service}
-                    sidebar={this.state.sidebar}
-                    webform={this.state.webform}
-                    isHomePage={this.state.isHomePage}
-                    isContactUsPage={this.state.isContactUsPage}
-                  />
-                </div>
-                :
-                <MainSection
-                  basic={this.state.basic}
-                  service={this.state.service}
-                  sidebar={this.state.sidebar}
-                  webform={this.state.webform}
-                  isContactUsPage={this.state.isContactUsPage}
-                />
-              }
-              <TestimonialsRegion
-                testimonials={this.state.testimonials}
-              />
-              <FooterRegion
-                footer={this.state.footer}
-                copyright={this.state.copyright}
-              />
-            </div>
-            </div>
+              :
+              null
+            }
+            <MainSection
+              callouts={this.state.callouts}
+              basic={this.state.basic}
+              service={this.state.service}
+              loadService={this.loadService}
+              sidebar={this.state.sidebar}
+              webform={this.state.webform}
+              isHomePage={this.state.isHomePage}
+              isContactUsPage={this.state.isContactUsPage}
+            />
+            <TestimonialsRegion
+              testimonials={this.state.testimonials}
+              loadService={this.loadService}
+            />
+            <FooterRegion
+              footer={this.state.footer}
+              copyright={this.state.copyright}
+              loadService={this.loadService}
+            />
+          </div>
           </div>
         </div>
       </Router>

@@ -385,6 +385,7 @@ ul.menu.mm-listview {
   position: relative;
   float: left;
   line-height: 1;
+  display: flex;
 }
 #header #service-menu ul li a {
   color: #fafafa;
